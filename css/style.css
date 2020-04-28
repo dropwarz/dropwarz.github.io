@@ -524,6 +524,10 @@ html, body {
 }
 
 @media screen and (max-width: 375px) {
+	.content {
+		padding: 15px 0;
+	}
+	
 	.content .container-fluid .row .submit-form label {
 		margin: 10px 0 0 0;
 	}
