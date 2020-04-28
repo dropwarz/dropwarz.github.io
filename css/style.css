@@ -521,3 +521,13 @@ html, body {
 		background: #d0dff5;
 	}
 }
+
+@media screen and (max-width: 375px) {
+	.content .container-fluid .row .submit-form label {
+		margin: 10px 0 0 0;
+	}
+	
+	.content .container-fluid .row .submit-form .amount {
+		padding: 0;
+	}
+}
