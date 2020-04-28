@@ -11,6 +11,8 @@ html, body {
 	background: #f1f7fc;
 }
 
+/* HEADER CSS START */
+
 .header {
 	z-index: 10;
 	background: #1668cf;
@@ -47,39 +49,6 @@ html, body {
 	padding: 0 20px;
 }
 
-@media screen and (max-width: 576px) {
-	.header .container-fluid .row .menu {
-		position: absolute;
-		top: 60px;
-		z-index: 10;
-		right: 0;
-		width: 0;
-		height: calc(100% - 60px);
-		padding: 0;
-		overflow: hidden;
-		background: #1668cf;
-		transition: all 0.3s ease-in-out;
-	}
-	
-	.header .container-fluid .row .menu.expand {
-		width: 100%;
-	}
-	
-	.header .container-fluid .row .menu ul.navbar-nav {
-		flex-direction: column;
-	}
-	
-	.header .container-fluid .row .menu ul.navbar-nav li.nav-item a.nav-link {
-		padding: 8px 15px;
-		transition: all 0.3s ease-in-out;
-		background: rgba(255,255,255,0);
-	}
-	
-	.header .container-fluid .row .menu ul.navbar-nav li.nav-item a:active.nav-link {
-		background: rgba(255,255,255,0.1);
-	}
-}
-
 .header .container-fluid .row .wallet {
 	display: flex;
 	align-items: center;
@@ -110,12 +79,6 @@ html, body {
 	padding: 14px 0;
 	outline: none;
 	display: none;
-}
-
-@media screen and (max-width: 576px) {
-	.header .container-fluid .row .wallet .burger {
-		display: block;
-	}
 }
 
 .header .container-fluid .row .wallet .burger span.bar,
@@ -160,6 +123,54 @@ html, body {
 	transform: rotate(-45deg);
 }
 
+@media screen and (max-width: 992px) {
+	.header .container-fluid .row .menu ul.navbar-nav li.nav-item a.nav-link {
+		padding: 0 10px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.header .container-fluid .row .menu {
+		position: absolute;
+		top: 60px;
+		z-index: 10;
+		right: 0;
+		width: 0;
+		height: calc(100% - 60px);
+		padding: 0;
+		overflow: hidden;
+		background: #1668cf;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	.header .container-fluid .row .menu.expand {
+		width: 100%;
+	}
+	
+	.header .container-fluid .row .menu ul.navbar-nav {
+		flex-direction: column;
+	}
+	
+	.header .container-fluid .row .menu ul.navbar-nav li.nav-item a.nav-link {
+		padding: 8px 15px;
+		transition: all 0.3s ease-in-out;
+		background: rgba(255,255,255,0);
+	}
+	
+	.header .container-fluid .row .menu ul.navbar-nav li.nav-item a:active.nav-link {
+		background: rgba(255,255,255,0.1);
+	}
+	
+	.header .container-fluid .row .wallet .burger {
+		display: block;
+	}
+}
+
+/* HEADER CSS END */
+
+
+/* CONTENT CONTAINER CSS START */
+
 .content {
 	z-index: 9;
 	height: calc(100% - 60px);
@@ -177,9 +188,71 @@ html, body {
 	box-shadow: 0 5px 10px rgba(13,74,202,0.05);
 }
 
+@media screen and (max-width: 992px) {
+	.content {
+		padding: 30px 0;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.content .container-fluid {
+		height: 100%;
+	}
+	
+	.content .container-fluid .row {
+		position: relative;
+		overflow: hidden;
+		height: 100%;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.content {
+		padding: 15px 0;
+	}
+}
+
+/* CONTENT CONTAINER CSS END */
+
+
+/* MOBILE TABS CSS START */
+
 .content .container-fluid .row .tabs {
 	display: none;
 }
+
+@media screen and (max-width: 576px) {
+	.content .container-fluid .row .tabs {
+		display: flex;
+		padding: 0;
+	}
+	
+	.content .container-fluid .row .tabs a.tab {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 40px;
+		text-align: center;
+		font-weight: 500;
+		font-size: 14px;
+	}
+	
+	.content .container-fluid .row .tabs a.tab-bet {
+		color: #FFF;
+		background: #1668cf;
+	}
+	
+	.content .container-fluid .row .tabs a.tab-results {
+		color: #000;
+		background: #d0dff5;
+	}
+}
+
+/* MOBILE TABS CSS END */
+
+
+/* SUBMIT FORM CSS START */
 
 .content .container-fluid .row .submit-form {
 	display: flex;
@@ -349,6 +422,67 @@ html, body {
 	font-weight: 500;
 }
 
+@media screen and (max-width: 992px) {
+	.content .container-fluid .row .submit-form .amount {
+		padding-bottom: 19px;
+		font-size: 50px;
+		line-height: 50px;
+	}
+
+	.content .container-fluid .row .submit-form .amount i.icon-win {
+		margin: 12px 5px 0 0;
+		width: 20px;
+		height: 30px;
+		background: url('../img/icon-win.svg') no-repeat;
+		background-size: auto 30px;
+	}
+}
+
+@media screen and (max-width: 768px) { 
+	.content .container-fluid .row .submit-form .input,
+	.content .container-fluid .row .submit-form .pay-btn {
+		width: 100%;
+	}
+	
+	.content .container-fluid .row .submit-form .amount {
+		font-size: 40px;
+		line-height: 40px;
+	}
+
+	.content .container-fluid .row .submit-form .amount i.icon-win {
+		margin: 10px 5px 0 0;
+		width: 16px;
+		height: 24px;
+		background: url('../img/icon-win.svg') no-repeat;
+		background-size: auto 24px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.content .container-fluid .row .submit-form {
+		position: absolute;
+		top: 40px;
+		right: 0;
+		height: calc(100% - 40px);
+		border-radius: 0 0 3px 3px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.content .container-fluid .row .submit-form label {
+		margin: 10px 0 0 0;
+	}
+	
+	.content .container-fluid .row .submit-form .amount {
+		padding: 0;
+	}
+}
+
+/* SUBMIT FORM CSS END */
+
+
+/* GRID CSS START */
+
 .content .container-fluid .row .grid {
 	padding: 0;
 }
@@ -415,69 +549,7 @@ html, body {
 	background-size: 12px auto;
 }
 
-@media screen and (max-width: 992px) {
-	.content {
-		padding: 30px 0;
-	}
-	
-	.content .container-fluid .row .submit-form .amount {
-		padding-bottom: 19px;
-		font-size: 50px;
-		line-height: 50px;
-	}
-
-	.content .container-fluid .row .submit-form .amount i.icon-win {
-		margin: 12px 5px 0 0;
-		width: 20px;
-		height: 30px;
-		background: url('../img/icon-win.svg') no-repeat;
-		background-size: auto 30px;
-	}
-	
-	.header .container-fluid .row .menu ul.navbar-nav li.nav-item a.nav-link {
-		padding: 0 10px;
-	}
-}
-
-@media screen and (max-width: 768px) { 
-	.content .container-fluid .row .submit-form .input,
-	.content .container-fluid .row .submit-form .pay-btn {
-		width: 100%;
-	}
-	
-	.content .container-fluid .row .submit-form .amount {
-		font-size: 40px;
-		line-height: 40px;
-	}
-
-	.content .container-fluid .row .submit-form .amount i.icon-win {
-		margin: 10px 5px 0 0;
-		width: 16px;
-		height: 24px;
-		background: url('../img/icon-win.svg') no-repeat;
-		background-size: auto 24px;
-	}
-}
-
 @media screen and (max-width: 576px) {
-	.content .container-fluid {
-		height: 100%;
-	}
-	
-	.content .container-fluid .row {
-		position: relative;
-		overflow: hidden;
-		height: 100%;
-	}
-	
-	.content .container-fluid .row .submit-form {
-		position: absolute;
-		top: 40px;
-		right: 0;
-		height: calc(100% - 40px);
-		border-radius: 0 0 3px 3px;
-	}
-	
 	.content .container-fluid .row .grid {
 		position: absolute;
 		top: 40px;
@@ -495,44 +567,171 @@ html, body {
 	.content .container-fluid .row .grid .table-responsive {
 		max-height: 100%;
 	}
-	
-	.content .container-fluid .row .tabs {
-		display: flex;
-		padding: 0;
-	}
-	
-	.content .container-fluid .row .tabs a.tab {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 40px;
-		text-align: center;
-		font-weight: 500;
-		font-size: 14px;
-	}
-	
-	.content .container-fluid .row .tabs a.tab-bet {
-		color: #FFF;
-		background: #1668cf;
-	}
-	
-	.content .container-fluid .row .tabs a.tab-results {
-		color: #000;
-		background: #d0dff5;
-	}
 }
 
-@media screen and (max-width: 375px) {
-	.content {
-		padding: 15px 0;
-	}
-	
-	.content .container-fluid .row .submit-form label {
-		margin: 10px 0 0 0;
-	}
-	
-	.content .container-fluid .row .submit-form .amount {
-		padding: 0;
-	}
+/* GRID CSS END */
+
+
+/* Modal CSS START */
+
+.modal .modal-dialog .modal-content {
+	border: none;
 }
+
+.modal .modal-dialog .modal-content .modal-header {
+	background: #d0dff5;
+	border: none;
+	color: #717a88;
+}
+
+.modal .modal-dialog .modal-content .modal-header h5 {
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.modal .modal-dialog .modal-content .modal-header .close {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	opacity: 1;
+	outline: none;
+}
+
+.modal .modal-dialog .modal-content .modal-header .close:after,
+.modal .modal-dialog .modal-content .modal-header .close:before {
+	position: absolute;
+	width: 30px;
+	height: 2px;
+	content: '';
+	left: 10px;
+	background: #000;
+}
+
+.modal .modal-dialog .modal-content .modal-header .close:after {
+	transform: rotate(45deg);
+}
+
+.modal .modal-dialog .modal-content .modal-header .close:before {
+	transform: rotate(-45deg);
+}
+
+.modal .modal-dialog .modal-content .modal-body {
+	padding: 15px;
+}
+
+.modal .modal-dialog .modal-content .modal-body label {
+	font-weight: 500;
+}
+
+.modal .modal-dialog .modal-content .modal-body p {
+	line-height: 1.6;
+	margin-bottom: 10px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart {
+	display: flex;
+	margin: 10px 0 20px 0;
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart i.pie {
+	width: 160px;
+	height: 160px;
+	background: url('../img/pie-chart.svg') no-repeat;
+	background-size: 160px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart ul {
+	width: calc(100% - 160px);
+	list-style-type: none;
+	padding: 20px 0 0 20px; 
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart ul li {
+	position: relative;
+	padding: 5px 0 5px 35px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart ul li i {
+	position: absolute;
+	left: 15px;
+	top: 10px;
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart ul li i.win {
+	background: #fbc208;
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart ul li i.round {
+	background: #ff8d01;
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart ul li i.drop {
+	background: #ff6901;
+}
+
+.modal .modal-dialog .modal-content .modal-body .pie-chart ul li i.team {
+	background: #ff2c01;
+}
+
+.modal .modal-dialog .modal-content .drops {
+	display: flex;
+	padding: 70px 50px;
+	flex-direction: column;
+	text-align: center;
+}
+
+.modal .modal-dialog .modal-content .drops label {
+	margin: 0 0 5px 0;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 300;
+	color: #fbc208;
+}
+
+.modal .modal-dialog .modal-content .drops .countdown {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+
+.modal .modal-dialog .modal-content .drops .countdown span.time {
+	font-weight: 600;
+}
+
+.modal .modal-dialog .modal-content .drops .amount {
+	letter-spacing: -2px;
+	font-size: 60px;
+	line-height: 60px;
+	font-weight: 600;
+	color: #1668cf;
+	padding-bottom: 30px;
+}
+
+.modal .modal-dialog .modal-content .drops .amount i.icon-win {
+	display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+	margin: 8px 5px 0 0;
+	width: 44px;
+	height: 44px;
+	background: url('../img/icon-win.svg') no-repeat center #1668cf;
+	border-radius: 50%;
+	background-size: auto 30px;
+}
+
+.modal .modal-dialog .modal-content .drops .receive {
+	color: #000;
+}
+
+.modal .modal-dialog .modal-content .drops .receive span.bold {
+	color: #1668cf;
+	font-weight: 600;
+}
+
+/* Modal CSS END */
