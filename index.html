@@ -15,6 +15,73 @@
 
 <body>
 
+<!-- Modal -->
+<div class="modal fade" id="GameFAQ" tabindex="-1" role="dialog" aria-labelledby="ModalScrollableTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="ModalScrollableTitle">Game FAQ</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<label>Prize Distribution</label>
+				<div class="pie-chart">
+					<i class="pie"></i>
+					<ul>
+						<li class="parts"><i class="win"></i><b>70%</b> - Game Winners</li>
+						<li class="parts"><i class="round"></i><b>15%</b> - Next Game</li>
+						<li class="parts"><i class="drop"></i><b>10%</b> - Windrop</li>
+						<li class="parts"><i class="team"></i><b>5%</b> - Team</li>
+					</ul>
+				</div>
+				<label>How to win?</label>
+				<p>You need to make closest prediction of final Windrops pool.</p>
+				<label>How many winners in the game?</label>
+				<p>There is 3 winners.</p>
+				<label>How much can I win?</label>
+				<p>3 Winners share 70% of $WIN prize pool.<br/>
+				1st Place: 55%<br/>
+				2nd Place: 30%<br/>
+				3rd Place: 15%
+				</p>
+				<label>Where goes other 30% of each prize pool?</label>
+				<p>- 15% of $WIN prize pool will go to the next game<br/>
+				- 10% of $WIN prize pool will be added to the drops pool<br/>
+				- 5% of $WIN prize pool will be used to run and support DropWarz game<br/>
+				</p>
+				<label>How many predictions I can make in single game?</label>
+				<p>You can make as many predictions as you wish. Every prediction will cost you 250 $WIN(1TRX)</p>
+				<label>Can I make my prediction 5 minutes before the final result?</label>
+				<p>No! Game will be closed 1h before final Windrops amount will be set.</p>
+				<label>Why i have the same prediction as winner, but i didnt win?</label>
+				<p>We record the time of your prediction. If you have the same prediction as other player(s) and you made it later, you will lose.</p>
+				<label>Why the game was cancelled?</label>
+				<p>There is minimum 10 participants requirement in the windrops warz game.</p>
+				<label>How much cost to play?</label>
+				<p>250 WIN = 1 prediction</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Drops" tabindex="-1" role="dialog" aria-labelledby="ModalScrollableTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="ModalScrollableTitle">Drops</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body drops">
+				<span class="countdown">Drops Countdown:<span class="time">12:33:33</span></span>
+				<label>Available Drops</label>
+				<span class="amount"><i class="icon-win"></i>10,000,000</span>
+				<span class="receive">A total of <span class="bold">256 Players</span> will divide equally drops pool - You will receive <span class="bold">50 $WIN</span></span>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="header">
 	<div class="container-fluid">
 		<div class="row">
@@ -30,10 +97,10 @@
 						<a class="nav-link" href="#">History</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Drops</a>
+						<a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#Drops">Drops</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Rules</a>
+						<a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#GameFAQ">FAQ</a>
 					</li>
 				</ul>
 			</div>
@@ -52,7 +119,7 @@
 			</div>
 			<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-12 submit-form">				
 				<span class="countdown">Countdown:<span class="time">12:33:33</span></span>
-				<span class="rules"><a href="javascript:void(0)">Rules</a></span>
+				<span class="rules"><a href="javascript:void(0)" data-toggle="modal" data-target="#GameFAQ">FAQ</a></span>
 				<label>Total Prize</label>
 				<span class="amount"><i class="icon-win"></i>10,000,000</span>
 				<span class="title">Current WINK.org Windrops Pool Size</span>
@@ -240,6 +307,10 @@
 <script>
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip()
+	})
+	
+	$('#myModal').on('shown.bs.modal', function () {
+	  $('#myInput').trigger('focus')
 	})
 	
 	$('.burger').click(function(){
