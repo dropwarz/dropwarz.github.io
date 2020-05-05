@@ -70,6 +70,12 @@ html, body {
 	border-radius: 15px;
 	line-height: 1;
 	background-image: linear-gradient(#fbc509,#ff8a00);
+	transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.header .container-fluid .row .wallet .login-btn:hover {
+	color: #FFF;
+	background: #fda705;
 }
 
 .header .container-fluid .row .wallet .burger {
@@ -313,17 +319,38 @@ html, body {
 	font-weight: 600;
 }
 
-.content .container-fluid .row .submit-form .amount i.icon-win {
+.content .container-fluid .row .submit-form .amount i {
 	display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
     zoom: 1;
     *display: inline;
 	margin: 8px 5px 0 0;
-	width: 29px;
 	height: 44px;
+}
+
+.content .container-fluid .row .submit-form .amount i.icon-win {
+	width: 29px;
 	background: url('../img/icon-win.svg') no-repeat;
 	background-size: 29px auto;
+}
+
+.content .container-fluid .row .submit-form .amount i.icon-btt {
+	width: 44px;
+	background: url('../img/icon-btt-white.svg') no-repeat;
+	background-size: auto 44px;
+}
+
+.content .container-fluid .row .submit-form .amount i.icon-usdt {
+	width: 50px;
+	background: url('../img/icon-usdt-white.svg') no-repeat;
+	background-size: auto 44px;
+}
+
+.content .container-fluid .row .submit-form .amount i.icon-trx {
+	width: 42px;
+	background: url('../img/icon-trx.svg') no-repeat;
+	background-size: auto 44px;
 }
 
 .content .container-fluid .row .submit-form .title {
@@ -360,7 +387,7 @@ html, body {
 	border-color: #ff0000;
 }
 
-.content .container-fluid .row .submit-form .input:before {
+.content .container-fluid .row .submit-form .input.trx-pool:before {
 	position: absolute;
 	left: 15px;
 	top: 11px;
@@ -370,6 +397,18 @@ html, body {
 	height: 19px;
 	background: url('../img/icon-trx.svg') no-repeat;
 	background-size: 18px auto;
+}
+
+.content .container-fluid .row .submit-form .input.btt-pool:before {
+	position: absolute;
+	left: 15px;
+	top: 11px;
+	display: block;
+	content: '';
+	width: 19px;
+	height: 19px;
+	background: url('../img/icon-btt-white.svg') no-repeat;
+	background-size: 19px auto;
 }
 
 .content .container-fluid .row .submit-form .input .error-message {
@@ -410,6 +449,12 @@ html, body {
 	cursor: pointer;
 	background-image: linear-gradient(#fbc509,#ff8a00);
 	box-shadow: 0 10px 15px rgba(10,40,105,0.25);
+	transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.content .container-fluid .row .submit-form .pay-btn:hover {
+	color: #FFF;
+	background: #fda705;
 }
 
 .content .container-fluid .row .submit-form .wallet-balance {
@@ -429,11 +474,32 @@ html, body {
 		line-height: 50px;
 	}
 
-	.content .container-fluid .row .submit-form .amount i.icon-win {
+	.content .container-fluid .row .submit-form .amount i {
 		margin: 12px 5px 0 0;
-		width: 20px;
 		height: 30px;
+	}
+	
+	.content .container-fluid .row .submit-form .amount i.icon-win {
+		width: 20px;
 		background: url('../img/icon-win.svg') no-repeat;
+		background-size: auto 30px;
+	}
+	
+	.content .container-fluid .row .submit-form .amount i.icon-btt {
+		width: 30px;
+		background: url('../img/icon-btt-white.svg') no-repeat;
+		background-size: auto 30px;
+	}
+
+	.content .container-fluid .row .submit-form .amount i.icon-usdt {
+		width: 35px;
+		background: url('../img/icon-usdt-white.svg') no-repeat;
+		background-size: auto 30px;
+	}
+
+	.content .container-fluid .row .submit-form .amount i.icon-trx {
+		width: 29px;
+		background: url('../img/icon-trx.svg') no-repeat;
 		background-size: auto 30px;
 	}
 }
@@ -449,11 +515,33 @@ html, body {
 		line-height: 40px;
 	}
 
-	.content .container-fluid .row .submit-form .amount i.icon-win {
+	.content .container-fluid .row .submit-form .amount i {
 		margin: 10px 5px 0 0;
-		width: 16px;
 		height: 24px;
+	}
+	
+	.content .container-fluid .row .submit-form .amount i.icon-win {
+		width: 16px;
 		background: url('../img/icon-win.svg') no-repeat;
+		background-size: auto 24px;
+	}
+	
+	.content .container-fluid .row .submit-form .amount i.icon-btt {
+		width: 24px;
+		background: url('../img/icon-btt-white.svg') no-repeat;
+		background-size: auto 24px;
+	}
+
+	.content .container-fluid .row .submit-form .amount i.icon-usdt {
+		width: 28px;
+		background: url('../img/icon-usdt-white.svg') no-repeat;
+		background-size: auto 24px;
+	}
+
+	.content .container-fluid .row .submit-form .amount i.icon-trx {
+		width: 23px;
+		height: 24px;
+		background: url('../img/icon-trx.svg') no-repeat;
 		background-size: auto 24px;
 	}
 }
@@ -515,7 +603,7 @@ html, body {
 }
 
 .content .container-fluid .row .grid .table-responsive table tbody tr.my-bet td i.icon-win-dark {
-	background: url('../img/icon-win-white.svg') no-repeat;
+	background: url('../img/icon-win-white.svg') no-repeat center;
 	background-size: 12px auto;
 }
 
@@ -543,9 +631,9 @@ html, body {
 }
 
 .content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-win-dark {
-	width: 12px;
+	width: 19px;
 	height: 19px;
-	background: url('../img/icon-win-dark.svg') no-repeat;
+	background: url('../img/icon-win-dark.svg') no-repeat center;
 	background-size: 12px auto;
 }
 
@@ -568,6 +656,83 @@ html, body {
 		max-height: 100%;
 	}
 }
+
+/* New Grid Styles START */
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-btt-dark,
+.content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-btt-white {
+	width: 19px;
+	height: 19px;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-btt-dark {
+	background: url('../img/icon-btt-dark.svg') no-repeat;
+	background-size: 19px auto;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-btt-white {
+	background: url('../img/icon-btt-white.svg') no-repeat;
+	background-size: 19px auto;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-usdt-dark,
+.content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-usdt-white {
+	width: 19px;
+	height: 19px;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-usdt-dark {
+	background: url('../img/icon-usdt-dark.svg') no-repeat center;
+	background-size: 19px auto;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td i.icon-usdt-white {
+	background: url('../img/icon-usdt-white.svg') no-repeat center;
+	background-size: 19px auto;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td a {
+	color: #1668cf;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td label {
+	margin-right: 6px;
+	width: 84px;
+	text-align: center;
+	padding: 2px 0;
+	font-size: 12px;
+	border-radius: 12px;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td label.single {
+	color: #FFF;
+	background: #796be0;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td label.multy {
+	color: #FFF;
+	background: #3c7ed4;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td a.btn {
+	display: block;
+	text-align: center;
+	padding: 6px 12px;
+	color: #000;
+	border-radius: 12px;
+	line-height: 1;
+	background-image: linear-gradient(#fbc509,#ff8a00);
+	outline: none;
+	border: none;
+	transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.content .container-fluid .row .grid .table-responsive table tbody tr td a:hover.btn {
+	color: #FFF;
+	background: #fda705;
+}
+
+/* New Grid Styles END */
 
 /* GRID CSS END */
 
