@@ -549,10 +549,16 @@ html, body {
 @media screen and (max-width: 576px) {
 	.content .container-fluid .row .submit-form {
 		position: absolute;
+		z-index: 2;
 		top: 40px;
 		right: 0;
 		height: calc(100% - 40px);
 		border-radius: 0 0 3px 3px;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	.content .container-fluid .row .submit-form.hide {
+		right: -100%;
 	}
 }
 
@@ -639,17 +645,10 @@ html, body {
 
 @media screen and (max-width: 576px) {
 	.content .container-fluid .row .grid {
-		position: absolute;
-		top: 40px;
-		right: -100%;
+		z-index: 1;
 		background: #FFF;
 		height: 100%;
 		border-radius: 3px;
-		transition: all 0.3s ease-in-out;
-	}
-	
-	.content .container-fluid .row .grid.expand {
-		right: 0;
 	}
 	
 	.content .container-fluid .row .grid .table-responsive {
